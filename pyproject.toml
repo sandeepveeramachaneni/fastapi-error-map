@@ -7,7 +7,7 @@ sources = ["src"]
 
 [project]
 name = "fastapi-error-map"
-version = "0.9.3"
+version = "0.9.4"
 description = "Elegant per-endpoint error handling in FastAPI with OpenAPI schema generation"
 readme = "README.md"
 license = { text = "Apache-2.0" }
@@ -160,6 +160,7 @@ split-on-trailing-comma = true
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = [
+    "ARG002", # unused-method-argument
     "PLR2004", # magic-value-comparison
     "S101", # assert
 ]
@@ -174,6 +175,9 @@ split-on-trailing-comma = true
     "PLR0913", # too-many-arguments
     "UP006", # non-pep585-annotation
     "UP035", # deprecated-import
+]
+"src/fastapi_error_map/translators.py" = [
+    "ARG002", # unused-method-argument
 ]
 
 [tool.slotscheck]

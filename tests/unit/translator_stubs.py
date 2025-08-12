@@ -27,7 +27,7 @@ class DummyServerErrorTranslator(ErrorTranslator[ServerErrorStub]):
     def error_response_model_cls(self) -> type[ServerErrorStub]:
         return ServerErrorStub
 
-    def from_error(self, _err: Exception) -> ServerErrorStub:
+    def from_error(self, err: Exception) -> ServerErrorStub:
         return ServerErrorStub(error="internal")
 
 
@@ -36,5 +36,5 @@ class CustomTranslator(ErrorTranslator[dict[str, str]]):
     def error_response_model_cls(self) -> type[dict[str, str]]:
         return dict
 
-    def from_error(self, _err: Exception) -> dict[str, str]:
+    def from_error(self, err: Exception) -> dict[str, str]:
         return {"msg": "explicit"}

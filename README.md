@@ -1,6 +1,6 @@
 ## FastAPI Error Map
 
-[![PyPI version](https://badge.fury.io/py/fastapi-error-map.svg?cacheBust=3)](https://badge.fury.io/py/fastapi-error-map)
+[![PyPI version](https://badge.fury.io/py/fastapi-error-map.svg?cacheBust=4)](https://badge.fury.io/py/fastapi-error-map)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/fastapi-error-map?cacheBust=1)
 [![codecov](https://codecov.io/gh/ivan-borovets/fastapi-error-map/branch/master/graph/badge.svg?token=ABTVQLI0RL)](https://codecov.io/gh/ivan-borovets/fastapi-error-map)
 ![GitHub License](https://img.shields.io/github/license/ivan-borovets/fastapi-error-map?cacheBust=1)
@@ -219,6 +219,11 @@ If it raises, the exception propagates and the request fails.
 This is intentional to avoid hiding errors in side effects — they should be fixed rather than silently ignored.
 Keep `on_error` robust or wrap it on your side if you prefer soft-fail logging.
 
+> [!NOTE]
+> Both translator and `on_error` receive the raised exception as an argument.
+> If your implementation does not use it, suppress the unused-argument warning from your linter (e.g. `# noqa: ARG002`
+> for Ruff).
+
 ### 🧠 Parameter Precedence
 
 Error handling and schema generation in `fastapi-error-map` are fully driven by route-level arguments to `.get()`,
@@ -277,7 +282,7 @@ from `error_map` — but only for the specified status codes.
 
 ```
 
-#### 🚨 Handling Unmapped Exceptions (`warn_on_unmapped`)
+#### ❗ Handling Unmapped Exceptions (`warn_on_unmapped`)
 
 By default (`warn_on_unmapped=True`), `fastapi-error-map` expects every exception raised in a handler to be explicitly
 listed in `error_map`.  

@@ -1,12 +1,12 @@
 ## FastAPI Error Map
 
-[![PyPI version](https://badge.fury.io/py/fastapi-error-map.svg?cacheBust=4)](https://badge.fury.io/py/fastapi-error-map)
+[![PyPI version](https://badge.fury.io/py/fastapi-error-map.svg?cacheBust=5)](https://badge.fury.io/py/fastapi-error-map)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/fastapi-error-map?cacheBust=1)
 [![codecov](https://codecov.io/gh/ivan-borovets/fastapi-error-map/branch/master/graph/badge.svg?token=ABTVQLI0RL)](https://codecov.io/gh/ivan-borovets/fastapi-error-map)
 ![GitHub License](https://img.shields.io/github/license/ivan-borovets/fastapi-error-map?cacheBust=1)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ivan-borovets/fastapi-error-map/ci.yaml?cacheBust=1)
 
-Elegant per-endpoint error handling in FastAPI with OpenAPI schema generation.
+Elegant per-endpoint error handling for FastAPI that keeps OpenAPI docs in sync.
 
 ### 📦 Installation
 
